@@ -5,4 +5,14 @@
 
 <h1> Home Template</h1>
 
+<div>
+    <div>
+        {% for rooms in room %}
+        <div>
+            <h5>{{rooms.id}} -- {{rooms.name}}</h5>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 {% endblock content %}
