@@ -102,6 +102,9 @@ def updateRoom(request, pk):
 def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
 
+    if request.user != room.host:
+        return HttpResponse('You are not allowed here!')
+
     if request.method == "POST":
         room.delete()
         return redirect('home')
