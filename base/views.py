@@ -82,8 +82,12 @@ def home(request):
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
+
+    # Here room.message_set.all() returns the set of all messages related to that room
+    # - means descending, without - means ascending
+    room_messages = room.message_set.all().order_by('-created')
     
-    context = {'rooms': room}
+    context = {'rooms': room, 'room_messages': room_messages}
     return render(request, 'base/room.html', context)
 
 
