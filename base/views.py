@@ -90,7 +90,7 @@ def room(request, pk):
 
     # Here room.message_set.all() returns the set of all messages related to that room
     # - means descending, without - means ascending
-    room_messages = room.message_set.all().order_by('-created')
+    room_messages = room.message_set.all()
 
     participants = room.participants.all()
 
