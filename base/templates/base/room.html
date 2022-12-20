@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    {% if rooms.host == request.user %}
+    {% if request.user.is_authenticated %}
     <div class="room__message">
       <form action="" method="POST">
 
