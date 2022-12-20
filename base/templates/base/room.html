@@ -130,7 +130,7 @@
       </div>
     </div>
 
-
+    {% if rooms.host == request.user %}
     <div class="room__message">
       <form action="" method="POST">
 
@@ -139,6 +139,7 @@
         <input name="body" placeholder="Write your message here..." />
       </form>
     </div>
+    {% endif %}
 
   </div>
   <!-- Room End -->
